@@ -41,7 +41,7 @@ This repository hosts the source code for an artisanal portfolio designed to sta
 
 ### Contact Interface
 - Interactive contact form with sketch-style input fields, submission feedback animations, and modal confirmation.
-- Direct correspondence channels via email and LinkedIn.
+- Direct correspondence channels via email.
 
 ### Smooth Scrolling Experience
 - Integrated Lenis smooth scrolling engine for natural inertia and fluid page motion.
@@ -157,8 +157,7 @@ This application can be deployed to any static or Node-based hosting platform:
 
 Faizan
 - Portfolio: https://faizancode.com
-- GitHub: https://github.com/faizancodecom
-- LinkedIn: https://linkedin.com/in/faizancode
+- GitHub: https://github.com/Faizan-code-arch
 
 ## License
 
