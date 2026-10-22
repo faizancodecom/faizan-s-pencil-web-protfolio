@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { background: #fbfbf7; padding: 40px; font-family: sans-serif; }
+    .row { display: flex; align-items: center; margin-bottom: 60px; }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 34px 10px 28px;
+      background: #ffffff;
+      color: #141414;
+      font-size: 28px;
+      font-weight: bold;
+      border: 2.6px solid #141414;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      box-shadow: 3px 4px 0px #141414;
+      transform: rotate(-1.5deg);
+    }
+    .hero-plane-wave {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 55px;
+      flex-shrink: 0;
+    }
+    .plane-wave-svg {
+      width: 65px;
+      height: 160px;
+      overflow: visible;
+      display: block;
+      transform-origin: center center;
+    }
+  </style>
+</head>
+<body>
+  <h3>Option 1: rotate(-78deg) - tail lower, arrow pointing slightly up-left at button, margin-left: 20px</h3>
+  <div class="row">
+    <div class="contact-btn">contact ✈</div>
+    <div class="hero-plane-wave" style="margin-left: 20px;">
+      <svg class="plane-wave-svg" style="transform: rotate(-78deg);" viewBox="0 0 65 160">
+        <path d="M 28 152 C 28 132, 26 116, 28 100 C 30 84, 52 74, 52 90 C 52 108, 28 106, 28 80 C 28 58, 28 40, 28 26" stroke="rgba(20, 20, 20, 0.2)" stroke-width="1.4" stroke-dasharray="3 3"/>
+        <path d="M 27 150 C 27 130, 25 115, 27 98 C 29 82, 50 72, 50 88 C 50 106, 27 104, 27 78 C 27 56, 27 38, 27 24" stroke="#141414" stroke-width="2.4"/>
+        <path d="M 20 32 L 27 22 L 34 32" stroke="#141414" stroke-width="2.2"/>
+        <g transform="translate(27, 16)">
+          <polygon points="0,-14 -12,8 0,4" fill="#ffffff" stroke="#141414" stroke-width="2"/>
+          <polygon points="0,-14 12,8 0,4" fill="#f4f4ee" stroke="#141414" stroke-width="2"/>
+          <line x1="0" y1="-14" x2="0" y2="4" stroke="#141414" stroke-width="1.8"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <h3>Option 2: rotate(-102deg) - tail higher, arrow swooping down-left at button, margin-left: 20px</h3>
+  <div class="row">
+    <div class="contact-btn">contact ✈</div>
+    <div class="hero-plane-wave" style="margin-left: 20px;">
+      <svg class="plane-wave-svg" style="transform: rotate(-102deg);" viewBox="0 0 65 160">
+        <path d="M 28 152 C 28 132, 26 116, 28 100 C 30 84, 52 74, 52 90 C 52 108, 28 106, 28 80 C 28 58, 28 40, 28 26" stroke="rgba(20, 20, 20, 0.2)" stroke-width="1.4" stroke-dasharray="3 3"/>
+        <path d="M 27 150 C 27 130, 25 115, 27 98 C 29 82, 50 72, 50 88 C 50 106, 27 104, 27 78 C 27 56, 27 38, 27 24" stroke="#141414" stroke-width="2.4"/>
+        <path d="M 20 32 L 27 22 L 34 32" stroke="#141414" stroke-width="2.2"/>
+        <g transform="translate(27, 16)">
+          <polygon points="0,-14 -12,8 0,4" fill="#ffffff" stroke="#141414" stroke-width="2"/>
+          <polygon points="0,-14 12,8 0,4" fill="#f4f4ee" stroke="#141414" stroke-width="2"/>
+          <line x1="0" y1="-14" x2="0" y2="4" stroke="#141414" stroke-width="1.8"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <h3>Option 3: rotate(-98deg) - subtle hand-drawn tilt down-left, margin-left: 24px</h3>
+  <div class="row">
+    <div class="contact-btn">contact ✈</div>
+    <div class="hero-plane-wave" style="margin-left: 24px;">
+      <svg class="plane-wave-svg" style="transform: rotate(-98deg);" viewBox="0 0 65 160">
+        <path d="M 28 152 C 28 132, 26 116, 28 100 C 30 84, 52 74, 52 90 C 52 108, 28 106, 28 80 C 28 58, 28 40, 28 26" stroke="rgba(20, 20, 20, 0.2)" stroke-width="1.4" stroke-dasharray="3 3"/>
+        <path d="M 27 150 C 27 130, 25 115, 27 98 C 29 82, 50 72, 50 88 C 50 106, 27 104, 27 78 C 27 56, 27 38, 27 24" stroke="#141414" stroke-width="2.4"/>
+        <path d="M 20 32 L 27 22 L 34 32" stroke="#141414" stroke-width="2.2"/>
+        <g transform="translate(27, 16)">
+          <polygon points="0,-14 -12,8 0,4" fill="#ffffff" stroke="#141414" stroke-width="2"/>
+          <polygon points="0,-14 12,8 0,4" fill="#f4f4ee" stroke="#141414" stroke-width="2"/>
+          <line x1="0" y1="-14" x2="0" y2="4" stroke="#141414" stroke-width="1.8"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fbfbf7;
+      padding: 40px;
+      font-family: 'Patrick Hand', cursive, sans-serif;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .sketch-contact-capsule {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 10px 34px 10px 28px;
+      background: #ffffff;
+      color: #141414;
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: 700;
+      border: 2.6px solid #141414;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+      box-shadow: 3px 4px 0px #141414;
+      transform: rotate(-1.5deg);
+    }
+    .hero-plane-wave {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 60px;
+      flex-shrink: 0;
+      pointer-events: none;
+    }
+    .plane-wave-svg {
+      width: 150px;
+      height: 60px;
+      overflow: visible;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h2>Hero Action: Contact Button & Arrow Doodle Pointing Towards It</h2>
+  <div class="hero-actions">
+    <div class="sketch-contact-capsule">
+      <span>contact</span>
+      <svg width="34" height="22" viewBox="0 0 40 26" fill="none">
+        <path d="M2 13 L36 2 L24 24 L17 15 L2 13 Z" fill="#ffffff" stroke="#141414" stroke-width="2.2" stroke-linejoin="round" />
+        <path d="M36 2 L17 15" stroke="#141414" stroke-width="2" />
+        <path d="M17 15 L21 22 L24 18" fill="none" stroke="#141414" stroke-width="1.8" stroke-linejoin="round" />
+      </svg>
+    </div>
+
+    <div class="hero-plane-wave">
+      <svg class="plane-wave-svg" viewBox="0 0 160 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ghost pencil dashed trail -->
+        <path d="M 152 33 C 132 33, 116 35, 100 33 C 84 31, 74 9, 90 9 C 108 9, 106 33, 80 33 C 58 33, 40 33, 26 33" stroke="rgba(20, 20, 20, 0.2)" stroke-width="1.4" stroke-dasharray="3 3" stroke-linecap="round" />
+        
+        <!-- Solid 2B pencil sketch trail -->
+        <path d="M 150 32 C 130 32, 115 34, 98 32 C 82 30, 72 8, 88 8 C 106 8, 104 32, 78 32 C 56 32, 38 32, 24 32" stroke="#141414" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+        
+        <!-- Leftward arrowhead pointing at contact button -->
+        <path d="M 32 25 L 22 32 L 32 39" stroke="#141414" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+        
+        <!-- Leftward Paper Airplane perched at tip -->
+        <g transform="translate(16, 32) rotate(-90)">
+          <!-- Left Wing -->
+          <polygon points="0,-14 -12,8 0,4" fill="#ffffff" stroke="#141414" stroke-width="2" stroke-linejoin="round" />
+          <!-- Right Wing -->
+          <polygon points="0,-14 12,8 0,4" fill="#f4f4ee" stroke="#141414" stroke-width="2" stroke-linejoin="round" />
+          <!-- Center Fold Crease -->
+          <line x1="0" y1="-14" x2="0" y2="4" stroke="#141414" stroke-width="1.8" />
+          <!-- Underbody Keel -->
+          <polygon points="0,4 -3,8 0,6 3,8" fill="#deded6" stroke="#141414" stroke-width="1.2" stroke-linejoin="round" />
+        </g>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Notes & Insights — Faizan // UI/UX Developer</title>
+  <meta name="description" content="Handcrafted articles on UI/UX design, ergonomics, and clean front-end architecture by Faizan.">
+  
+  <!-- Google Fonts: Authentic Handwritten Sketch Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="blog-page-body">
+
+  <!-- Smooth Black Ink Trail Canvas -->
+  <canvas id="ink-trail-canvas" class="ink-trail-canvas" aria-hidden="true"></canvas>
+
+  <!-- Hand-Drawn Custom Cursor (Arrow & Pointing Hand) -->
+  <div id="custom-cursor" class="drawn-cursor" aria-hidden="true">
+    <svg class="cursor-svg cursor-arrow" viewBox="0 0 32 32" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 3 L4 23 L9 18 L14 27 L18 25 L13 16 L20 16 Z" fill="#ffffff" stroke="#141414" stroke-width="2" stroke-linejoin="round" />
+      <path d="M5.5 5.5 L5.5 20.5 L9.5 16.5 L14 24.5 L16.5 23 L12 15 L17.5 15 Z" fill="none" stroke="#444444" stroke-width="1" stroke-linejoin="round" opacity="0.6" />
+      <circle cx="4" cy="3" r="1.2" fill="#141414" />
+    </svg>
+    <svg class="cursor-svg cursor-pointer-hand" viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M11 2 C9.5 2, 9 3.5, 9 5 L9 13 L8 13 C6.5 13, 5 14.5, 5 16 L5 20 C5 25, 9 28, 15 28 C21 28, 25 24, 25 19 L25 15 C25 13.5, 23.5 13, 22 13 C21.5 13, 21 13.2, 20.5 13.5 C20 12.5, 18.5 12, 17 12 C16.5 12, 16 12.2, 15.5 12.5 L15.5 5 C15.5 3.5, 14.5 2, 13 2 Z" fill="#ffffff" stroke="#141414" stroke-width="2" stroke-linejoin="round" />
+      <path d="M11 8 L13 8 M16 16 L19 16 M20 17 L23 17" stroke="#141414" stroke-width="1.2" stroke-linecap="round" />
+      <circle cx="12" cy="3" r="1.2" fill="#141414" />
+    </svg>
+  </div>
+
+  <!-- Reading Progress Indicator -->
+  <div id="reading-progress-bar" class="reading-progress-bar" aria-hidden="true"></div>
+
+  <!-- Top Navigation Bar for Blog Page -->
+  <header class="blog-page-header">
+    <div class="blog-header-container">
+      <a href="index.html#blog" class="blog-back-btn" title="Return to Portfolio">
+        <span class="back-arrow">←</span>
+        <span>Back to Portfolio</span>
+      </a>
+
+      <div class="blog-header-brand">
+        <span class="brand-name">Faizan</span>
+        <span class="brand-badge">Design Notes</span>
+      </div>
+
+      <a href="index.html#contact" class="blog-contact-btn">
+        <span>Get in Touch ✈</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Article Container -->
+  <main class="blog-main-container">
+    <article class="blog-article-card" id="article-container">
+      
+      <!-- Top Meta Row -->
+      <div class="blog-meta-top">
+        <span class="blog-category-badge" id="article-badge">UX Architecture</span>
+        <span class="blog-date-text" id="article-date">October 2026 • 5 min read</span>
+      </div>
+
+      <!-- Article Title -->
+      <h1 class="blog-article-heading" id="article-title">Why Low-Fidelity Wireframes Save Weeks of Development</h1>
+
+      <!-- Author Byline -->
+      <div class="blog-author-byline">
+        <span class="byline-prefix">Written by</span>
+        <span class="byline-name">Faizan</span>
+        <span class="byline-role">• UI/UX Developer &amp; Web Designer</span>
+      </div>
+
+      <!-- Hand-Drawn Scribble Divider -->
+      <div class="blog-scribble-divider" aria-hidden="true">
+        <svg viewBox="0 0 600 12" fill="none" preserveAspectRatio="none">
+          <path d="M2 6 C 100 2, 200 10, 300 4 C 400 1, 500 9, 598 6" stroke="#141414" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <!-- Full Article Body -->
+      <div class="blog-article-body" id="article-content">
+        <!-- Injected via JavaScript based on ?id= -->
+      </div>
+
+      <!-- Pagination / Article Switcher -->
+      <div class="blog-article-pagination">
+        <button type="button" class="blog-nav-card prev-card" id="btn-prev-article">
+          <span class="nav-label">← Previous Note</span>
+          <span class="nav-title" id="prev-article-title">Loading...</span>
+        </button>
+        <button type="button" class="blog-nav-card next-card" id="btn-next-article">
+          <span class="nav-label">Next Note →</span>
+          <span class="nav-title" id="next-article-title">Loading...</span>
+        </button>
+      </div>
+
+      <!-- CTA Box -->
+      <div class="blog-cta-box">
+        <div class="cta-paper-clip" aria-hidden="true">
+          <svg viewBox="0 0 24 38" width="22" height="34" fill="none">
+            <path d="M12 4 C 7 4, 3 8, 3 14 L 3 26 C 3 31, 7 35, 12 35 C 17 35, 21 31, 21 26 L 21 11 C 21 8, 18 5, 15 5 C 12 5, 9 8, 9 11 L 9 24 C 9 26, 10 27, 12 27 C 14 27, 15 26, 15 24 L 15 12" stroke="#141414" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="cta-content">
+          <h3>Have a design challenge or project to build?</h3>
+          <p>Every great digital product starts with intentional wireframes and clean code. Let’s collaborate on your next interface.</p>
+        </div>
+        <a href="index.html#contact" class="blog-cta-btn">
+          <span>Start a Conversation ✈</span>
+        </a>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-pencil-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 20" preserveAspectRatio="none" fill="none">
+        <path d="M0 8 C 150 4, 300 12, 450 7 C 600 3, 750 13, 900 8 C 1050 5, 1150 11, 1200 8" stroke="#141414" stroke-width="2.4" />
+      </svg>
+    </div>
+    <div class="footer-container">
+      <div class="footer-bottom-bar">
+        <p class="footer-made-by">Made by Faizan</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Blog Data Store
+    const articles = [
+      {
+        id: 0,
+        badge: "UX Architecture & Low-Fi",
+        date: "October 2026 • 5 min read",
+        title: "Why Low-Fidelity Wireframes Save Weeks of Development",
+        contentHtml: `
+          <p class="lead-text">
+            When product teams leap directly into high-fidelity Figma mockups or premature frontend component coding, conversations almost inevitably get derailed by surface cosmetics—button border radiuses, color gradients, and shadow blurs—instead of validating core user flows and information architecture.
+          </p>
+
+          <h2>1. The Cost of Premature Fidelity</h2>
+          <p>
+            When a stakeholder or engineer sees a pixel-perfect, colored mockup, their brain instinctively evaluates aesthetics rather than structural usability. Questions like <em>"Why are we placing this checkout step here?"</em> get overshadowed by <em>"Can we make this purple button slightly darker?"</em>
+          </p>
+          <p>
+            Starting with 2B graphite on paper completely neutralizes this bias. Without decorative distractions, the team is forced to look purely at the skeletal flow: What is the primary user intent? Where is the cognitive friction? How many steps does it take to accomplish the goal?
+          </p>
+
+          <div class="pencil-callout-box">
+            <h4>💡 The 2B Graphite Principle</h4>
+            <p>
+              A sketch on paper takes 2 minutes to iterate. A coded component takes hours. People are significantly more willing to discard a flawed premise when it is drawn with a pencil than when someone has spent three days tweaking CSS grid tracks.
+            </p>
+          </div>
+
+          <h2>2. Emotional Attachment and Rapid Throwaways</h2>
+          <p>
+            One of the greatest psychological barriers in software development is the sunk cost fallacy. When a designer spends forty hours building an intricate component library in high fidelity, they become emotionally defensive of their work. They will resist suggestions that require restructuring the layout because it means throwing away dozens of hours of styling.
+          </p>
+          <p>
+            In contrast, rough wireframing fosters radical detachment. You can sketch ten alternative navigation layouts on an A4 paper sheet in twenty minutes, pin them on a wall, crumple eight of them up, and combine the best two—all before opening a code editor.
+          </p>
+
+          <h2>3. Inherent Accessibility & Typographic Clarity</h2>
+          <p>
+            When you strip color and images out of a screen, you immediately discover whether your typographic hierarchy stands on its own. If a user cannot immediately distinguish the primary heading, supporting body copy, and primary action in pure black and white, adding a neon accent color will only mask a fundamentally broken reading hierarchy.
+          </p>
+
+          <h2>Actionable 3-Step Wireframing Protocol:</h2>
+          <ul class="article-steps-list">
+            <li><strong>Step 1: The 10-Minute Paper Sketch:</strong> Draw 3 variations of the primary page layout on paper. Time-box strictly.</li>
+            <li><strong>Step 2: The Thumb-Zone Audit:</strong> Check if critical interaction targets fall naturally inside comfortable thumb arcs on mobile screens.</li>
+            <li><strong>Step 3: Clickable Wireframe Prototype:</strong> Link the wireframes together into a gray-box prototype to test the user flow with 3 real users before writing code.</li>
+          </ul>
+        `
+      },
+      {
+        id: 1,
+        badge: "Design Craft & Tactility",
+        date: "September 2026 • 7 min read",
+        title: "Designing Web Experiences with Human Warmth",
+        contentHtml: `
+          <p class="lead-text">
+            Much of the modern web suffers from sterile corporate homogeny—flat geometric layouts, identical sans-serif typefaces, and algorithmic predictability that feel designed by robots for robots. True digital craftsmanship comes from tactile character, deliberate pacing, and respect for the human mind.
+          </p>
+
+          <h2>1. The Rise of Algorithmic Sterility</h2>
+          <p>
+            Over the past decade, design systems and UI component kits brought immense consistency to the web. However, an unintended side effect was the erasure of personality. Every SaaS website started looking identical: an oversized blue hero headline, three generic card columns, and an AI-generated gradient sphere.
+          </p>
+          <p>
+            When everything looks engineered by a machine, users disengage emotionally. Interfaces that introduce organic imperfection—hand-drawn contours, subtle paper textures, dynamic ink strokes—stand out immediately because they signal that a thoughtful human hand sat down and crafted every line with care.
+          </p>
+
+          <div class="pencil-callout-box">
+            <h4>🌿 The Value of Tactile Micro-Interactions</h4>
+            <p>
+              Physical objects in the real world have friction, inertia, and tactile feedback. When digital elements respond with subtle analog spring physics, paper airplane transformations, or fluid ink gestures, the interface feels alive and pleasant to touch.
+            </p>
+          </div>
+
+          <h2>2. Calm Design: Respecting Mental Bandwidth</h2>
+          <p>
+            Warm design is inherently calm design. It does not scream with popups every ten seconds, flashing countdown timers, or intrusive cookie walls. Instead, it respects the reader’s gaze with generous margins, high-contrast readable typefaces, and quiet breathing room.
+          </p>
+          <p>
+            By designing with a sketchbook mindset—treating the screen as a clean piece of parchment—we give the user’s mind space to think, absorb, and reflect rather than bombarding them with visual noise.
+          </p>
+
+          <h2>3. Principles for Human-Centered Craft:</h2>
+          <ul class="article-steps-list">
+            <li><strong>Embrace Organic Contours:</strong> Break away from rigid rectangles with subtle, hand-drawn wobbly border radiuses.</li>
+            <li><strong>Tactile Physical Feedback:</strong> Make buttons feel pressed, cards feel stacked, and notes feel stamped.</li>
+            <li><strong>Zero Artificial Slop:</strong> Never use generic AI placeholders where intentional, well-crafted human prose belongs.</li>
+          </ul>
+        `
+      },
+      {
+        id: 2,
+        badge: "Ergonomics & Layout",
+        date: "August 2026 • 4 min read",
+        title: "The Physical Ergonomics of Responsive Layouts",
+        contentHtml: `
+          <p class="lead-text">
+            Screens are physical glass slabs held by biological human hands. Responsive web design isn't merely about shrinking columns from 1200px to 390px via CSS media queries—it is about respecting the biomechanics and thumb fatigue of human fingers.
+          </p>
+
+          <h2>1. The Biomechanics of the Thumb Arc</h2>
+          <p>
+            Over 75% of mobile web browsing is performed single-handedly with the thumb. Steven Hoober’s landmark research on mobile touchscreen interactions revealed that human thumbs have distinct reachability zones:
+          </p>
+          <p>
+            The lower-center and bottom-right quadrant (for right-handed users) represents the <strong>Natural Zone</strong>—reachable without any wrist gymnastics. The top edge and upper-left corners represent the <strong>Stretch and Pain Zones</strong>, requiring the user to uncomfortably regrip their phone or use a second hand.
+          </p>
+
+          <div class="pencil-callout-box">
+            <h4>📐 The Bottom-First Layout Law</h4>
+            <p>
+              Critical interactive elements—primary submission buttons, drawer toggles, and search bars—belong anchored at the bottom where thumb reach is effortless, while static reading content resides comfortably at the top.
+            </p>
+          </div>
+
+          <h2>2. Desktop Ergonomics: The 75-Character Gaze Rule</h2>
+          <p>
+            Ergonomics doesn't stop at mobile devices. On 27-inch widescreen desktop monitors, careless CSS layouts that let text lines span 1200px cause severe eye tracking strain. The human eye loses its place when jumping back to the beginning of a line that exceeds 75 to 80 characters.
+          </p>
+          <p>
+            By constraining reading containers to a maximum width of 680px to 740px (around 65 characters per line) and using comfortable 1.6 to 1.7 line heights, reading sustained articles becomes effortless and fatigue-free.
+          </p>
+
+          <h2>3. Touch Target Minimums</h2>
+          <p>
+            Fingertips are not precise mouse pixels; they are 10mm soft pads. Any interactive tap target smaller than 48×48px with less than 8px of margin separation is an accessibility bug waiting to frustrate a user with accidental taps.
+          </p>
+        `
+      }
+    ];
+
+    // Load Article Based on ?id= Query Parameter
+    function getArticleId() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const idParam = parseInt(urlParams.get('id') || '0', 10);
+      if (isNaN(idParam) || idParam < 0 || idParam >= articles.length) {
+        return 0;
+      }
+      return idParam;
+    }
+
+    function renderArticle(idx) {
+      const article = articles[idx] || articles[0];
+      
+      document.title = `${article.title} — Faizan // UI/UX Developer`;
+      document.getElementById('article-badge').textContent = article.badge;
+      document.getElementById('article-date').textContent = article.date;
+      document.getElementById('article-title').textContent = article.title;
+      document.getElementById('article-content').innerHTML = article.contentHtml;
+
+      // Update Pagination Buttons
+      const prevIdx = (idx - 1 + articles.length) % articles.length;
+      const nextIdx = (idx + 1) % articles.length;
+
+      document.getElementById('prev-article-title').textContent = articles[prevIdx].title;
+      document.getElementById('next-article-title').textContent = articles[nextIdx].title;
+
+      document.getElementById('btn-prev-article').onclick = () => {
+        window.history.pushState({}, '', `blog.html?id=${prevIdx}`);
+        renderArticle(prevIdx);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      document.getElementById('btn-next-article').onclick = () => {
+        window.history.pushState({}, '', `blog.html?id=${nextIdx}`);
+        renderArticle(nextIdx);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      const currentId = getArticleId();
+      renderArticle(currentId);
+
+      // Reading progress bar
+      window.addEventListener('scroll', () => {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+        const bar = document.getElementById('reading-progress-bar');
+        if (bar) bar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+      });
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
